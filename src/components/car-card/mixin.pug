@@ -1,30 +1,21 @@
 mixin car-card(model, colors, name, cost, price, discount, transmission, fuel, color)
   .car-card
-    .car-card__header
+    //- .car-card__header
       .car-card__name=name
     .car-card__content
-      .car-card__preview
-        .car-card__labels
-          .car-card__labels_item В наличии
-        .car-card__slider
-          picture
-            img(
-              data-color-name=color
-              src=require('@/img/pics/cars/' + model + '/front/' + color + '.png')
-              srcset=`${require('@/img/pics/cars/' + model + '/front/' + color + '-large.png')} 2x`
-              alt=name
-            )
       .car-card__main
-        .car-card__params
-          span Авторассрочка #[b 0%]
-          span Первый взнос #[b 0%]
         .car-card__prices
           .car-card__price.car-card__prices-price
-            .car-card__label Выгода
-            .car-card__value до #{priceFormat(discount)} ₽
+            .car-card__label Выгода до
+            .car-card__value #{priceFormat(discount)} ₽
+        .car-card__params
+          span Авторассрочка #[b 0%]
+          span Кредит от #[b 15 561 ₽]
+          span Ставка от #[b 7,9%]
+          span Авто в наличии
             //- .car-card__crossed #{priceFormat(cost)} ₽
-      .car-card__bonuses
-        .car-card__options
+      //- .car-card__bonuses
+         .car-card__options
           .car-card__option
             .car-card__icon
               +icon('transmission')
@@ -37,20 +28,46 @@ mixin car-card(model, colors, name, cost, price, discount, transmission, fuel, c
           li Гарантия 7 лет
           li Рассрочка от 0%
           li Уже в наличии
-      .car-card__palette.mobile
+      .car-card__preview
+        .car-card__labels
+          //- .car-card__labels_item Авто в наличии
+        .car-card__slider
+          picture
+            img(
+              data-color-name=color
+              src=require('@/img/pics/cars/tiggo8promax/front/image.png')
+              srcset=`${require('@/img/pics/cars/' + model + '/front/' + color + '-large.png')} 2x`
+              alt=name
+            )
+      .card-swiper
+        .swiper
+          .swiper-wrapper
+            .swiper-slide
+              img(
+                src=require('@/img/pics/swiper/Rectangle 2093.png')
+              )
+            .swiper-slide
+              img(
+                src=require('@/img/pics/swiper/Rectangle 2094.png')
+              )
+            .swiper-slide
+              img(
+                src=require('@/img/pics/swiper/Rectangle 2095.png')
+              )
+            .swiper-slide
+              img(
+                src=require('@/img/pics/swiper/Rectangle 2096.png')
+              )
+          .swiper-button-prev
+          .swiper-button-next
+      //- .car-card__palette.mobile
         for color, index in colors
           .car-card__color(
             class=`${index === 0 ? 'is-active' : ''}`
             data-color-name=color.name
             style=`background: ${color.hex}`
           )
-      .car-card__control
-        .car-card__button
-          .btn.btn_transparent(@click=`modalOpen({title: 'Заявка на выгоду', target: 'Заявка на авто: ${model.toUpperCase()} ${name} (${color})',
-          yandex_id: 'zayavka'})`) Получить выгоду
-        .car-card__button
-          .btn(@click=`modalOpen({title: 'Узнать цену', target: 'Заявка на авто: ${model.toUpperCase()} ${name} (${color})',
-          yandex_id: 'zayavka'})`) Узнать цену
+    .car-card__control
         .car-card__button
           .btn.btn_second(@click=`modalOpen({
             title: 'Заявка на кредит',
@@ -58,7 +75,13 @@ mixin car-card(model, colors, name, cost, price, discount, transmission, fuel, c
             gtm_name: 'button-credit',
             yandex_id: 'zayavka'
           })`) Рассчитать кредит
-    .car-card__palette.tablet
+        .car-card__button
+          .btn.btn_transparent(@click=`modalOpen({title: 'Узнать цену', target: 'Заявка на авто: ${model.toUpperCase()} ${name} (${color})',
+          yandex_id: 'zayavka'})`) Узнать цену
+        .car-card__button
+          .btn.btn_transparent(@click=`modalOpen({title: 'Заявка на выгоду', target: 'Заявка на авто: ${model.toUpperCase()} ${name} (${color})',
+          yandex_id: 'zayavka'})`) Подобрать комплектацию
+    //- .car-card__palette.tablet
       for color, index in colors
         .car-card__color(
           class=`${index === 0 ? 'is-active' : ''}`

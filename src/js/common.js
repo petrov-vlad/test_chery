@@ -14,6 +14,7 @@ import VueTheMask from 'vue-the-mask';
 import YmapPlugin from 'vue-yandex-maps';
 import YandexMap from '../components/yandex-map/component.vue';
 import RequestForm from '../components/request-form/component.vue';
+import Swiper from '../../node_modules/swiper/swiper-bundle.min';
 
 // Icons
 const svgModules = require.context('../img/icons', false, /\.svg$/);
@@ -167,5 +168,16 @@ new Vue({
         yandex_id: data.yandex_id,
       });
     },
+  },
+});
+
+new Swiper('.swiper', {
+  direction: 'vertical',
+  slidesPerView: 4,
+  spaceBetween: 5,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });

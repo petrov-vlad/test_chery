@@ -38,7 +38,8 @@ $font: $font-secondary;
   }
 
   &-list {
-    @include grid(4, 2, 2);
+    display: flex;
+    gap: 0.7rem;
 
     @include respond-from('tablet-large') {
       @include grid-col(2);
@@ -50,14 +51,10 @@ $font: $font-secondary;
   }
 
   &-item {
-    position: relative;
-    padding: 2.8rem 2.9rem 4.7rem;
-    background-repeat: no-repeat;
-    background-position: 101% 40%;
-    background-size: 14rem;
-    border: 0.1rem solid #e2e2e2;
-    border-radius: 0.4rem;
-    transition: border-color 0.3s ease;
+    padding: 0.3rem 4.85rem 0.7rem !important;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.3rem 1.5rem rgba(0, 0, 0, 0.07);
 
     @include respond-from('notebook') {
       padding: 2rem;
@@ -231,13 +228,6 @@ $font: $font-secondary;
 
   &-brand,
   &-name,
-  &-cost {
-    font-family: $font;
-    font-style: italic;
-  }
-
-  &-brand,
-  &-name,
   &-cost,
   &-discount,
   &-credit {
@@ -257,10 +247,11 @@ $font: $font-secondary;
   }
 
   &-name {
-    margin-bottom: 0.9rem;
-    font-size: 1.8em;
-    line-height: 4.4rem;
-    text-transform: uppercase;
+    color: #000;
+    font-size: 2.0rem;
+    line-height: 2.4rem;
+    text-transform: capitalize;
+    opacity: 0.3;
 
     @include respond-from('tablet-large') {
       margin-bottom: 0.5rem;
@@ -270,6 +261,13 @@ $font: $font-secondary;
     @include respond-from('tablet-min') {
       font-size: 1.8rem;
       line-height: 1.2;
+    }
+
+    &.active,
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
     }
   }
 

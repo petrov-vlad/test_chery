@@ -33,12 +33,17 @@ $store-list-heading_font-style: italic;
     }
   }
 
+  &-content {
+    padding: 4.2rem 6.7rem 3.5rem 3.8rem;
+    background-color: #fff;
+    border-radius: 2rem;
+  }
+
   &__title {
-    margin-bottom: 3rem;
     font-weight: $title_font-weight;
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: $title_font;
-    font-style: $title_font-style;
+    text-transform: uppercase;
 
     @include respond-from("tablet-min") {
       font-size: 2.5rem;

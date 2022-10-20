@@ -32,7 +32,7 @@
   "models": [
     {
       "id": "tiggo8promax",
-      "name": "TIGGO 8 PRO MAX",
+      "name": "tiggo 8 pro max",
       "discount": 660000,
       "label": "НОВИНКА 2022",
       "colors": [
@@ -81,7 +81,7 @@
     },
     {
       "id": "tiggo8pro",
-      "name": "TIGGO 8 PRO",
+      "name": "tiggo 8 pro",
       "discount": 660000,
       "label": "НОВИНКА 2022",
       "colors": [
@@ -140,7 +140,7 @@
     },
     {
       "id": "tiggo7pro",
-      "name": "TIGGO 7 PRO",
+      "name": "tiggo 7 pro",
       "discount": 410000,
       "label": "В наличии",
       "colors": [
@@ -195,7 +195,7 @@
     },
     {
       "id": "tiggo4",
-      "name": "TIGGO 4",
+      "name": "tiggo 4",
       "discount": 300000,
       "label": "В наличии",
       "colors": [

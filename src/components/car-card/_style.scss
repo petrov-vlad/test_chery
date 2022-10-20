@@ -5,23 +5,22 @@ $car-name_font-style: italic;
 
 .car-card {
   position: relative;
-  margin: 0 0 2.5rem;
-  padding: 0 0 2.5rem;
-  border-bottom: 0.1rem solid $color-border;
 
   @include respond-from("tablet-min") {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
   }
 
-  &:last-child {
-    margin: 0 0 4rem;
-  }
-
   &__header {
     @include respond-to("tablet-min") {
       display: flex;
     }
+  }
+
+  &__price {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   &__labels {
@@ -51,7 +50,7 @@ $car-name_font-style: italic;
 
   &__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     @include respond-from("tablet-large") {
       flex-wrap: wrap;
@@ -67,9 +66,9 @@ $car-name_font-style: italic;
   }
 
   &__preview {
-    position: relative;
-    max-width: 24.8rem;
-    padding-top: 2.4rem;
+    // position: relative;
+    // max-width: 24.8rem;
+    // padding-top: 2.4rem;
 
     @include respond-from("desktop") {
       max-width: 22rem;
@@ -90,7 +89,7 @@ $car-name_font-style: italic;
       display: block;
 
       > * {
-        max-width: 95%;
+        width: 100%;
       }
     }
   }
@@ -180,6 +179,8 @@ $car-name_font-style: italic;
   }
 
   &__main {
+    padding-top: 4.7rem;
+
     @include respond-from("tablet-large") {
       flex: 0 0 33%;
       width: 33%;
@@ -198,10 +199,16 @@ $car-name_font-style: italic;
 
     span {
       display: block;
+      color: #000000;
+      font-weight: 500;
+      font-size: 2.4rem;
+      font-family: $font-secondary;
+      font-style: normal;
+      line-height: 3.8rem;
 
       b {
         color: $color-accent;
-        font-weight: normal;
+        font-weight: 500;
       }
     }
   }
@@ -230,7 +237,12 @@ $car-name_font-style: italic;
   }
 
   &__label {
-    opacity: 0.6;
+    color: #000000;
+    font-weight: 500;
+    font-size: 3.2rem;
+    font-family: $font-secondary;
+    font-style: normal;
+    line-height: 3.8rem;
 
     @include respond-from("tablet-min") {
       font-size: 1.5rem;
@@ -239,11 +251,11 @@ $car-name_font-style: italic;
 
   &__value {
     position: relative;
-    color: $color-accent;
+    color: rgba(185, 26, 35, 1);
     font-weight: 500;
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     font-family: $car_font;
-    font-style: italic;
+    line-height: 3.8rem;
     white-space: nowrap;
 
     @include respond-from("tablet-min") {
@@ -363,8 +375,9 @@ $car-name_font-style: italic;
   }
 
   &__control {
+    display: flex;
+    gap: 1.5rem;
     @include respond-from("tablet-large") {
-      display: flex;
       justify-content: space-between;
       width: 100%;
       margin-top: 3rem;
@@ -377,9 +390,8 @@ $car-name_font-style: italic;
   }
 
   &__button {
-    margin: 0 0 1rem auto;
     font-family: $car_font;
-
+   
     @include respond-from("tablet-large") {
       width: 100%;
 
@@ -401,7 +413,6 @@ $car-name_font-style: italic;
     .btn {
       display: block;
       width: 100%;
-      font-size: 1.8rem;
     }
   }
 }

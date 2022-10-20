@@ -15,7 +15,7 @@ section#store.store
         data-model-id=model.id
         class=`${index === 0 ? '' : 'hidden'}`
       )
-        .store__title #{config.brand} #{model.name} <br>В наличии
+        .store__title #{model.name}
         .store__wrapper
           .store-list
             for configuration in model.store
