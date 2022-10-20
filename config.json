@@ -1,0 +1,246 @@
+{
+  "brand": "Chery",
+  "name": "Чери Центр АЙ-БИ-ЭМ ЮГ",
+  "slogan": "Официальный дилер <br>CHERY в Кемерово",
+  "site_name": "Официальный дилер Chery в Кемерово | Официальный дилер «Ай-Бэ-Эм» Юг",
+  "site_description": "Официальный дилер Chery в Кемерово. На сайте Вы можете подобрать кроссовер Чери, купить онлайн или в кредит, записаться на тест-драйв. Официальный дилерский центр Chery в Кемерово по адресу: ул. Терешковой, 62, тел: +7 (495) 127 92 14.",
+  "domain": "chery42.ru",
+  "contacts": {
+    "address": "ул. Терешковой, 62",
+    "map": {
+      "lat": 55.32534748796391,
+      "long": 86.15537211111449
+    },
+    "phone": "+7 (3842) 900-262"
+  },
+  "banner": {
+    "heading" : "Купи свой <span>Chery Tiggo</span><br> в Мае по самым <br>выгодным условиям:",
+    "subheading" : "",
+    "list_items": [
+      "Выгода до 420 000 руб",
+      "Переплата по кредиту 0%",
+      "Первоначальный взнос 0%",
+      "Рассрочка 0%"
+    ],
+    "modal" : {
+      "status": false,
+      "title": "",
+      "target": "",
+      "button_name": ""
+    }
+  },
+  "models": [
+    {
+      "id": "tiggo8promax",
+      "name": "TIGGO 8 PRO MAX",
+      "discount": 660000,
+      "label": "НОВИНКА 2022",
+      "colors": [
+        {
+          "name": "blue",
+          "hex": "#272C5E"
+        },
+        {
+          "name": "black",
+          "hex": "#232323"
+        },
+        {
+          "name": "yellow",
+          "hex": "#A56F13"
+        },
+        {
+          "name": "red",
+          "hex": "#CB333A"
+        },
+        {
+          "name": "light-blue",
+          "hex": "#7D90BA"
+        },
+        {
+          "name": "white",
+          "hex": "#F0F0F0"
+        }
+      ],
+      "store": [
+        {
+          "name": "",
+          "stock": [
+            {
+              "name": "2.0T ULTIMATE 4WD",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 660000,
+              "transmission": "DCT",
+              "fuel": "Бензин",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiggo8pro",
+      "name": "TIGGO 8 PRO",
+      "discount": 660000,
+      "label": "НОВИНКА 2022",
+      "colors": [
+        {
+          "name": "blue",
+          "hex": "#272C5E"
+        },
+        {
+          "name": "black",
+          "hex": "#232323"
+        },
+        {
+          "name": "yellow",
+          "hex": "#A56F13"
+        },
+        {
+          "name": "red",
+          "hex": "#CB333A"
+        },
+        {
+          "name": "light-blue",
+          "hex": "#7D90BA"
+        },
+        {
+          "name": "white",
+          "hex": "#F0F0F0"
+        }
+      ],
+      "store": [
+        {
+          "name": "",
+          "stock": [
+            {
+              "name": "1.6T Dreamline 2WD",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 660000,
+              "transmission": "DCT",
+              "fuel": "Бензин",
+              "color": "blue"
+            },
+            {
+              "name": "1.6T Ultimate 2WD",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 660000,
+              "transmission": "DCT",
+              "fuel": "Бензин",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiggo7pro",
+      "name": "TIGGO 7 PRO",
+      "discount": 410000,
+      "label": "В наличии",
+      "colors": [
+        {
+          "name": "blue",
+          "hex": "#1b3ba2"
+        },
+        {
+          "name": "blue-white",
+          "hex": "linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(0, 84, 123) 50%, rgb(0, 84, 123) 100%)"
+        },
+        {
+          "name": "red",
+          "hex": "#cb333a"
+        },
+        {
+          "name": "red-black",
+          "hex": "linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(255, 35, 31) 50%, rgb(255, 35, 31) 100%)"
+        },
+        {
+          "name": "grey",
+          "hex": "#ccc"
+        }
+      ],
+      "store": [
+        {
+          "name": "",
+          "stock": [
+            {
+              "name": "1.5T PRESTIGE 2WD",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 410000,
+              "transmission": "CVT",
+              "fuel": "Бензин",
+              "color": "red"
+            },
+            {
+              "name": "1.5T ELITE 2WD",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 410000,
+              "transmission": "CVT",
+              "fuel": "Бензин",
+              "color": "red"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiggo4",
+      "name": "TIGGO 4",
+      "discount": 300000,
+      "label": "В наличии",
+      "colors": [
+        {
+          "name": "black",
+          "hex": "#232323"
+        },
+        {
+          "name": "blue",
+          "hex": "blue"
+        },
+        {
+          "name": "red",
+          "hex": "red"
+        },
+        {
+          "name": "grey",
+          "hex": "#c7c7c7"
+        },
+        {
+          "name": "silver",
+          "hex": "#ddd"
+        },
+        {
+          "name": "white",
+          "hex": "#f0f0f0"
+        }
+      ],
+      "store": [
+        {
+          "name": "",
+          "stock": [
+            {
+              "name": "1.5 Cosmo",
+              "offerDay": true,
+              "cost": null,
+              "price": null,
+              "discount": 300000,
+              "transmission": "МКПП",
+              "fuel": "Бензин",
+              "color": "black"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

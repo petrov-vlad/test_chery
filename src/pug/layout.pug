@@ -1,0 +1,80 @@
+-
+  const configs = require(`@root/config.json`);
+  const env = htmlWebpackPlugin.options.env;
+
+include mixins/icon
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title=configs.site_name
+
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0")
+    meta(name="format-detection" content="telephone=no")
+
+    meta(name="keywords", content="")
+    meta(name="description", content=configs.site_description)
+
+    meta(property="og:title" content="")
+    meta(property="og:site_name" content=configs.site_name)
+    meta(property="og:url" content="")
+    meta(property="og:description" content=configs.site_description)
+    meta(property="og:type" content="article")
+
+    link(rel="apple-touch-icon", sizes="180x180", href="/favicon/apple-touch-icon.png")
+    link(rel="icon", type="image/png", sizes="32x32", href="/favicon/favicon-32x32.png")
+    link(rel="icon", type="image/png", sizes="16x16", href="/favicon/favicon-16x16.png")
+    link(rel="manifest", href="/favicon/site.webmanifest")
+    link(rel="mask-icon", href="/favicon/safari-pinned-tab.svg", color="#b91a23")
+    meta(name="msapplication-TileColor", content="#b91a23")
+    meta(name="theme-color", content="#b91a23")
+
+    if env === 'production'
+      script.
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(89894355, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true
+        });
+      script.
+        var __cs = __cs || [];
+        __cs.push(["setCsAccount", "HqKVeXh1DRBwV1gCgNoD9oeelDS3R2iZ"]);
+      script(async src="https://app.comagic.ru/static/cs.min.js").
+
+  body.b-body
+    if env === 'production'
+      noscript
+        div
+          img(
+            src="https://mc.yandex.ru/watch/89894355"
+            style="position:absolute; left:-9999px;"
+          )
+
+    script(type="application/ld+json").
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Официальный дилер CHERY в Москве",
+        "description": " Официальный дилерский центр CHERY в Москве - автосалон ««Ай-Бэ-Эм» Юг».",
+        "telephone": "#{configs.contacts.phone}",
+        "url": "https://#{configs.domain}",
+        "logo": "https://#{configs.domain}/img/common/logo-g.svg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Терешковой, 62",
+          "addressLocality": "Москва",
+          "addressCountry": "Россия"
+        }
+      }
+    #content-wrapper.b-body__content
+      main.b-content
+        block content
+
+    block footer

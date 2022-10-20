@@ -1,0 +1,333 @@
+$font: $font-secondary;
+
+.tabs {
+  @include container();
+  margin-bottom: 11rem - 2.3rem;
+
+  @include respond-from('tablet') {
+    margin-bottom: 2rem;
+    margin-bottom: 6rem - 2.3rem;
+  }
+
+  &__title {
+    margin-bottom: 9rem;
+    font-weight: 500;
+    font-size: 4rem;
+    font-family: $font-secondary;
+
+    @include respond-from('tablet-large') {
+      margin-bottom: 5rem;
+    }
+
+    @include respond-from('tablet-min') {
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+    }
+
+    .heading {
+      font-size: 4rem;
+
+      @include respond-from('tablet-min') {
+        font-size: 2.5rem;
+      }
+    }
+
+    &-italic {
+      font-style: italic;
+    }
+  }
+
+  &-list {
+    @include grid(4, 2, 2);
+
+    @include respond-from('tablet-large') {
+      @include grid-col(2);
+    }
+
+    @include respond-from('tablet') {
+      @include grid-col(1);
+    }
+  }
+
+  &-item {
+    position: relative;
+    padding: 2.8rem 2.9rem 4.7rem;
+    background-repeat: no-repeat;
+    background-position: 101% 40%;
+    background-size: 14rem;
+    border: 0.1rem solid #e2e2e2;
+    border-radius: 0.4rem;
+    transition: border-color 0.3s ease;
+
+    @include respond-from('notebook') {
+      padding: 2rem;
+      font-size: 80%;
+    }
+
+    @include respond-from('tablet-large') {
+      margin-top: 4.3rem;
+      padding: 2.2rem 2rem 2rem;
+    }
+
+    @include respond-from('tablet-min') {
+      margin-bottom: 1.5rem;
+      padding: 2.2rem 1.8rem 1.5rem;
+      font-size: 100%;
+    }
+
+    @include respond-to('tablet-large') {
+      padding: 2.2rem 2rem 2.7rem;
+      background: none !important;
+    }
+
+    &:not(.no-stock):hover {
+      border-color: black;
+      cursor: pointer;
+    }
+
+    &.active {
+      border-color: black;
+    }
+  }
+
+  &-label {
+    position: absolute;
+    top: -4.3rem;
+    left: -0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16.6rem;
+    height: 4.3rem;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 130%;
+    border: 0.1rem solid;
+    border-radius: 0.4rem 0.4rem 0 0;
+    animation: color 2s ease-in-out infinite;
+    content: "";
+  }
+
+  @keyframes color {
+    0% {
+      color: #FFFFFF;
+      background-color: #B91A23;
+    }
+
+    5% {
+      color: #FDFAFA;
+      background-color: #CD5A60;
+    }
+
+    10% {
+      color: #FAF0F0;
+      background-color: #D87F84;
+    }
+
+    15% {
+      color: #F6E2E3;
+      background-color: #E29FA3;
+    }
+
+    20% {
+      color: #F1D1D3;
+      background-color: #EABBBD;
+    }
+
+    25% {
+      color: #EABBBD;
+      background-color: #F1D1D3;
+    }
+
+    30% {
+      color: #E29FA3;
+      background-color: #F6E2E3;
+    }
+
+    35% {
+      color: #D87F84;
+      background-color: #FAF0F0;
+    }
+
+    40% {
+      color: #CD5A60;
+      background-color: #FDFAFA;
+    }
+
+    45% {
+      color: #B91A23;
+      background-color: #FFFFFF;
+    }
+
+    50% {
+      color: #B91A23;
+      background-color: #FFFFFF;
+    }
+
+    55% {
+      color: #B91A23;
+      background-color: #FFFFFF;
+    }
+
+    60% {
+      color: #CD5A60;
+      background-color: #FDFAFA;
+    }
+
+    65% {
+      color: #D87F84;
+      background-color: #FAF0F0;
+    }
+
+    70% {
+      color: #E29FA3;
+      background-color: #F6E2E3;
+    }
+
+    75% {
+      color: #EABBBD;
+      background-color: #F1D1D3;
+    }
+
+    80% {
+      color: #F1D1D3;
+      background-color: #EABBBD;
+    }
+
+    85% {
+      color: #F6E2E3;
+      background-color: #E29FA3;
+    }
+
+    90% {
+      color: #FAF0F0;
+      background-color: #D87F84;
+    }
+
+    95% {
+      color: #FDFAFA;
+      background-color: #CD5A60;
+    }
+
+    100% {
+      color: #FFFFFF;
+      background-color: #B91A23;
+    }
+  }
+
+  &-picture {
+    margin-bottom: 1.7rem;
+
+    @include respond-from('tablet-large') {
+      display: none;
+    }
+
+    picture {
+      * {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-brand,
+  &-name,
+  &-cost {
+    font-family: $font;
+    font-style: italic;
+  }
+
+  &-brand,
+  &-name,
+  &-cost,
+  &-discount,
+  &-credit {
+    display: block;
+    font-weight: 500;
+  }
+
+  &-brand {
+    font-size: 1.25em;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+
+    @include respond-from('tablet-min') {
+      font-size: 0.938em;
+      line-height: 1;
+    }
+  }
+
+  &-name {
+    margin-bottom: 0.9rem;
+    font-size: 1.8em;
+    line-height: 4.4rem;
+    text-transform: uppercase;
+
+    @include respond-from('tablet-large') {
+      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+    }
+
+    @include respond-from('tablet-min') {
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+  }
+
+  &-cost {
+    color: $color-accent;
+    font-size: 1.4em;
+    line-height: 3.2rem;
+
+    @include respond-from('tablet-large') {
+      font-size: 2.2rem;
+    }
+
+    @include respond-from('tablet-min') {
+      font-size: 1.8rem;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &-discount,
+  &-credit {
+    font-size: 1.25em;
+    line-height: 2.6rem;
+
+    @include respond-from('tablet-large') {
+      font-size: 1.8rem;
+    }
+
+    @include respond-from('tablet-min') {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  &-credit {
+    @include respond-from('tablet-min') {
+      display: none;
+    }
+  }
+
+  &-button {
+    display: block;
+    width: 100%;
+    margin-top: 2.3rem;
+    font-family: $font-secondary;
+
+    @include respond-from('tablet') {
+      margin-top: 5rem;
+    }
+  }
+
+  .rouble {
+    display: inline;
+  }
+}

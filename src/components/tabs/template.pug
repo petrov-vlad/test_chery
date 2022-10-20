@@ -1,0 +1,55 @@
+-
+  const config = require(`@root/config.json`);
+
+  const priceFormat = (number) => {
+    return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+  };
+
+section#tabs.tabs
+  .tabs-content
+    .tabs__title
+      h2.heading Выберите модель 
+        span.tabs-lead=config.brand
+    .tabs-list
+      //- .tabs-item(
+      //-     style=`background-image: -webkit-image-set( url(${require('@/img/pics/tabs/mobile/tiggo8pro.png')}) 1x, url(${require('@/img/pics/tabs/mobile/tiggo8pro-large.png')}) 2x );`
+      //-     class='no-stock'
+      //-   )
+      //-     .tabs-picture
+      //-       picture
+      //-         img(
+      //-           src=require('@/img/pics/tabs/tiggo8pro.png')
+      //-           srcset=`${require('@/img/pics/tabs/tiggo8pro-large.png')} 2x`
+      //-           alt="TIGGO 8 PRO"
+      //-         )
+      //-     span.tabs-brand=config.brand
+      //-     span.tabs-name TIGGO 8 PRO
+      //-     span.tabs-cost Скоро в продаже
+      //-     span.tabs-button.btn(@click=`modalOpen({
+      //-       title: 'Заявка предзаказ TIGGO 8 PRO',
+      //-       target: 'Заявка предзаказ TIGGO 8 PRO'})
+      //-     `) Оформить предзаказ
+
+      for model, index in config.models
+        .tabs-item(
+          data-model-id=model.id
+          data-card
+          style=`background-image: -webkit-image-set( url(${require('@/img/pics/tabs/mobile/' + model.id + '.png')}) 1x, url(${require('@/img/pics/tabs/mobile/' + model.id + '-large.png')}) 2x );`
+          class=`${index === 0 ? 'active' : ''}`
+        )
+          .tabs-label=model.label
+          .tabs-picture
+            picture
+              img(
+                src=require('@/img/pics/tabs/' + model.id + '.png')
+                srcset=`${require('@/img/pics/tabs/' + model.id + '-large.png')} 2x`
+                alt=config.name
+              )
+          span.tabs-brand=config.brand
+          span.tabs-name=model.name
+          span.tabs-cost Выгода до 
+            span #{priceFormat(model.discount)} ₽
+          //- span.tabs-credit Переплата по кредиту #[span 0%] #[br]Первоначальный взнос #[span 0%]
+
+  include ../../components/tabs/template-menu
+

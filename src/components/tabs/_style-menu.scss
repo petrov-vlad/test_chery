@@ -1,0 +1,57 @@
+.tabs-menu {
+  position: fixed;
+  top: -10rem;
+  left: 0;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  transition: all 0.7s 0.3s ease;
+
+  &__menu {
+    display: flex;
+    padding: 2.1rem 2rem 2.7rem;
+
+    @include respond-from("tablet") {
+      width: 100%;
+      padding: 1.5rem 0;
+      overflow-y: auto;
+    }
+
+    &-item {
+      color: $color-black;
+      font-size: 2.8rem;
+      line-height: 110%;
+      white-space: nowrap;
+      text-transform: uppercase;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: all 0.25s ease-out;
+
+      & + & {
+        margin-left: 2rem;
+      }
+
+      @include respond-from("tablet-large") {
+        font-size: 2.4rem;
+      }
+
+      @include respond-from("tablet-min") {
+        font-size: 1.6rem;
+      }
+
+      @include respond-from("iphone5") {
+        font-size: 1.4rem;
+      }
+
+      &.active,
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

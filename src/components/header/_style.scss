@@ -1,0 +1,237 @@
+.site-header {
+  background: black;
+
+  @include respond-to('desktop') {
+    margin: 0 0 2.5rem;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+  }
+
+  &__logo {
+    color: #fff;
+    font-size: 1.6rem;
+
+    @include respond-from('notebook') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    @include respond-from('notebook') {
+      display: none;
+    }
+  }
+
+  &__button {
+    padding: 1.2rem 3rem;
+    color: white;
+    font-size: 1.5rem;
+    border: 0.1rem solid white;
+    cursor: pointer;
+    transition: opacity .2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+
+  &__contacts {
+    color: white;
+    text-align: right;
+
+    > * {
+      display: block;
+    }
+
+    span {
+      font-size: 1.5rem;
+      opacity: 0.5;
+
+      @include respond-from('tablet') {
+        font-size: 1.2rem;
+      }
+    }
+
+    a {
+      color: white;
+      font-size: 2rem;
+
+      @include respond-from('tablet') {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include respond-to('tablet-min') {
+    min-height: 7rem;
+  }
+
+  @include respond-to('tablet') {
+    min-height: 10rem;
+  }
+
+  &-content {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 4.5rem;
+
+    @include respond-from('tablet-min') {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &-left,
+  &-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+
+    &-name {
+      img {
+        width: 15rem;
+
+        @include respond-from('tablet-min') {
+          width: 10rem;
+        }
+      }
+    }
+
+    &-line {
+      width: 0.1rem;
+      height: 3.7rem;
+      margin: 0 2rem;
+      background: black;
+
+      @include respond-from('tablet-min') {
+        display: none;
+        height: 3rem;
+        margin: 0 1rem;
+      }
+    }
+
+    &-text {
+      line-height: 2rem;
+
+      @include respond-from('tablet-large') {
+        display: none;
+      }
+    }
+
+    &-brand {
+      position: relative;
+      z-index: 2;
+      max-width: 12.4rem;
+      background-color: $color-accent;
+
+      @include respond-from('tablet') {
+        max-width: 7rem;
+      }
+    }
+
+    &-img {
+      &-brand {
+        width: 100%;
+        max-width: 100%;
+        padding: 17rem 2rem 4rem;
+
+        @include respond-from('tablet') {
+          padding: 10rem 1rem 2rem;
+        }
+
+        @include respond-from('tablet-min') {
+          padding: 6rem 1rem 2rem;
+        }
+      }
+    }
+  }
+
+  &-autogoda {
+    max-height: 4.5rem;
+    margin-right: 4rem;
+
+    @include respond-from('desktop') {
+      display: none;
+    }
+  }
+
+  &__addresses {
+    margin-right: 4rem;
+
+    @include respond-from('notebook') {
+      display: none;
+    }
+
+    &-item {
+      line-height: 1.4;
+
+      &:before {
+        position: relative;
+        top: 0.1rem;
+        left: -0.6rem;
+        display: inline-block;
+        width: 0.9rem;
+        height: 1.4rem;
+        background: url(../img/icons/map_bullit-g.svg) no-repeat center;
+        background-size: contain;
+        content: '';
+      }
+
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &-phone {
+    display: block;
+    margin-right: 4rem;
+    color: $color-accent;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    white-space: nowrap;
+
+    @include respond-from('tablet-min') {
+      margin-right: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &-button {
+    // width: 17.5rem;
+    height: 100%;
+    margin-right: 4.5rem;
+
+    @include respond-from('tablet') {
+      display: none;
+    }
+  }
+}

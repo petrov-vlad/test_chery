@@ -1,0 +1,52 @@
+- const config = require(`@root/config.json`);
+
+header.site-header
+  .site-header__container
+    .site-header__wrapper
+      .site-header__logo Чери Центр АЙ-БИ-ЭМ ЮГ
+
+      .site-header__buttons
+        .site-header__button(@click=`modalOpen({title: 'Заявка на тест-драйв', target: 'Заявка на тест-драйв', yandex_id: 'zayavka'})`)
+          span Пройти тест-драйв
+        .site-header__button(@click=`modalOpen({title: 'Заявка на сервис', target: 'Заявка на сервис', yandex_id: 'service'})`)
+          span Записаться на сервис
+        .site-header__button(@click=`modalOpen({title: 'Заявка на спецпредложение', target: 'Заявка на спецпредложение', yandex_id: 'zayavka'})`)
+          span Получить спецпредложения
+
+      .site-header__contacts
+        span #{config.contacts.address}
+        a(href=`tel:${config.contacts.phone}`) #{config.contacts.phone}
+
+header.header(hidden)
+  .header-content
+    .header-left
+      .header-logo
+        .header-logo-name
+          img.header-logo-img(
+            src=require('@/img/common/logo-g.svg')
+            width=200
+            height=19
+            alt=config.name
+          )
+        .header-logo-line
+        span.header-logo-text !{config.slogan}
+    .header-right
+      img.header-autogoda(
+        src=require('@/img/pics/autogoda.jpg')
+        srcset=require('@/img/pics/autogoda2x.jpg')
+        alt=''
+      )
+      ul.header__addresses
+        li.header__addresses-item
+          | #{config.contacts.address}
+          br
+          span время работы с 9:00 до 21:00
+      a.header-phone(href=`tel:${config.contacts.phone}`) #{config.contacts.phone}
+      .btn.btn_transparent.header-button(
+        @click="modalOpen({title: 'Заявка на обратный звонок', target: 'Заявка на обратный звонок из шапки', yandex_id: 'zayavka'})"
+      ) Обратный звонок
+      .header-logo-brand
+        img.header-logo-img.header-logo-img-brand(
+          src=require('@/img/common/logo-chery.png')
+          alt=config.brand
+        )

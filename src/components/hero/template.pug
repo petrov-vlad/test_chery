@@ -1,0 +1,16 @@
+- const config = require(`@root/config.json`);
+
+section.hero
+  .hero__wrapper
+    .hero__container
+      .hero__content(@click="modalOpen({title: 'Заявка на предложение', target: 'Заявка на предложение из баннера', yandex_id: 'zayavka'})")
+        //- h2.hero__heading !{config.banner.heading}
+        //- .hero__subtitle
+        //- .hero__content-item
+        //-   span.hero__content--br-mobile Автомобили Nissan
+        //-   span.hero__content--highlight #[b  от 959 000] рублей
+        //- ul.hero__list
+        //-   each item in config.banner.list_items.length ? config.banner.list_items : ''
+        //-     li.hero__list-item= item
+
+        a.btn.hero__content-btn Получить предложение

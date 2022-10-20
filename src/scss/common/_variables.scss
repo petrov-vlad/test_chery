@@ -1,0 +1,21 @@
+// Fonst
+$font-primary: "Helvetica Neue", sans-serif;
+$font-secondary: "Tactic Round", sans-serif;
+
+// Colors
+$color-red: #b91a23;
+$color-black: #000000;
+
+$color-accent: $color-red;
+$color-text: $color-black;
+
+$color-border: #e2e2e2;
+
+// Breakpoints
+$iphone5: 35em / 1.6;
+$tablet-min: 57.5em / 1.6;
+$tablet: 76.8em / 1.6;
+$tablet-large: 98em / 1.6;
+$notebook: 128em / 1.6;
+$desktop: 140em / 1.6;
+$desktop-large: 180em / 1.6;

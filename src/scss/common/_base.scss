@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  color: $color-text;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: $font-primary;
+  line-height: 1.3;
+  direction: ltr;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  -osx-font-smoothing: grayscale;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  @include container();
+}
+
+.hidden {
+  display: none;
+}

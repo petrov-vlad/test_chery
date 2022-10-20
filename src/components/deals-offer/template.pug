@@ -1,0 +1,21 @@
+include ../car-card/mixin
+- const auto = htmlWebpackPlugin.options.config
+
+section.store.store__deals-offer
+  .container
+    .store-content
+      .store__title Предложения дня
+        +icon('fire')
+      .store__wrapper
+        .store-list
+          .store-list-cards
+            for model, index in auto.models.sort((a, b) => a.price - b.price)
+              for equipment in model.store
+                h3.store-list-configs-heading=model.name
+                .store-list-cards
+                  for item in equipment.stock.filter((pos) => pos.offerDay)
+                    +car-card(model.id, item.name, item.cost, item.price, item.discount, item.transmission, item.fuel, item.color)
+        request-form(model=activeModel :modal="false")
+
+          //- for item in equipment.stock.sort((a, b) => a.price - b.price)
+            if item.offerDay

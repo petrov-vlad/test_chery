@@ -1,0 +1,15 @@
+-
+  const config = require(`@root/config.json`);
+
+  let modelID = 0;
+
+section#tabs-menu.tabs-menu
+  .container
+    nav.tabs-menu__nav
+      ul.tabs-menu__menu
+        for model, index in config.models
+          li.tabs-menu__menu-item(
+            data-model-id=model.id
+              class=`${index === 0 ? 'active' : ''}`
+          )=model.name
+          - modelID++;

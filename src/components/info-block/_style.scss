@@ -1,0 +1,73 @@
+$font: $font-secondary;
+$font-weight: 500;
+$font-style: italic;
+
+.info-block {
+  margin: 6rem 0;
+
+  @include respond-to('tablet-min') {
+    margin: 11rem 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @extend .container;
+
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__content {
+    .heading {
+      margin-bottom: 3.5rem;
+      font-weight: $font-weight;
+      font-family: $font;
+      font-style: italic;
+      line-height: 1.4;
+
+      @include respond-from('tablet-min') {
+        font-size: 2.5rem;
+
+        br {
+          display: none;
+        }
+      }
+
+      span {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__pic {
+    @include respond-from('tablet') {
+      margin: 4rem 0 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @include respond-to('tablet') {
+    &__button {
+      margin-top: 3rem;
+    }
+  }
+
+  .btn {
+    padding: 1.4rem 7rem 1.6rem;
+    font-weight: $font-weight;
+    font-family: $font;
+
+    @include respond-from('tablet-min') {
+      width: 100%;
+    }
+  }
+}

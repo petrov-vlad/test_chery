@@ -1,0 +1,258 @@
+$heading_font: $font-secondary;
+$heading_font-weight: 500;
+$heading_font-style: italic;
+$heading_font-size: 3em;
+$heading_line_height: 1.15;
+
+$list_font: $font-secondary;
+$list_font-weight: 500;
+$list_font-style: italic;
+$list_font-size: 1.2em;
+
+$btn_font: $font-secondary;
+$btn_font-size: 1.7rem;
+
+.hero {
+  margin-bottom: 4.2rem;
+
+  &__wrapper {
+    position: relative;
+    height: 42rem;
+    overflow: hidden;
+    background-image: url(../img/pics/backgrounds/hero_bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 1rem;
+
+    // @include respond-from('tablet') {
+    //   &:before {
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: linear-gradient(to bottom right, #000000, transparent);
+    //     opacity: 0.8;
+    //     content: '';
+    //   }
+    // }
+
+    @include respond-from('desktop') {
+      height: 34vw;
+      border-radius: 0;
+    }
+
+    @include respond-to('tablet-large') {
+      padding: 0;
+      @include container();
+    }
+  }
+
+  &__container {
+    height: 100%;
+
+    @include respond-from('tablet-large') {
+      @include container();
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: inherit;
+    padding: 4rem 10.4rem 6rem;
+    color: white;
+
+    @include respond-from('desktop') {
+      padding: 4rem 7vw;
+    }
+
+    @include respond-from('tablet-large') {
+      display: none;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-item {
+      position: relative;
+      margin-bottom: 1em;
+      font-weight: 300;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+
+    &--br-mobile {
+      @include respond-from('tablet') {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--highlight {
+      b {
+        font-size: 1.75em;
+      }
+    }
+
+    &-btn {
+      max-width: 28rem;
+      font-size: $btn_font-size;
+      font-family: $btn_font;
+
+      @include respond-from('tablet') {
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  &__heading {
+    color: white;
+    font-weight: $heading_font-weight;
+    font-size: $heading_font-size;
+    font-family: $heading_font;
+    font-style: $heading_font-style;
+    line-height: $heading_line_height;
+
+    @include respond-from('tablet-large') {
+      font-size: 4em;
+      line-height: 1.3;
+
+      br {
+        // display: none;
+      }
+    }
+
+    @include respond-from('tablet') {
+      font-size: 2.4em;
+    }
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  &__subtitle {
+    margin: -2.5rem 0 3rem;
+    font-size: 2.813em;
+
+    span {
+      color: $color-accent;
+      font-size: 1.4em;
+    }
+
+    @include respond-from('tablet-large') {
+      margin-bottom: 2rem;
+    }
+
+    @include respond-from('tablet') {
+      // margin: 0 0 2rem;
+    }
+
+    @include respond-from('tablet-min') {
+      margin: -1.5rem 0 2rem;
+    }
+  }
+
+  &__list {
+    font-weight: $list_font-weight;
+    font-size: $list_font-size;
+    font-family: $list_font;
+    font-style: $list_font-style;
+
+    @include respond-from('tablet-large') {
+      margin-bottom: 1rem;
+      font-size: 150%;
+    }
+
+    @include respond-from('tablet') {
+      margin-top: 2rem;
+    }
+
+    @include respond-from('tablet-min') {
+      font-size: 135%;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 90%;
+      margin-bottom: 0.9rem;
+      padding-left: 2rem;
+
+      // line
+      // &:before {
+      //   position: absolute;
+      //   left: 0;
+      //   width: 1.4rem;
+      //   height: 0.2rem;
+      //   background: $color-red;
+      //   content: '';
+      // }
+
+      // circle
+      &:before {
+        position: absolute;
+        left: 0;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: $color-red;
+        border-radius: 100%;
+        content: '';
+      }
+
+      i {
+        padding-left: 0.3rem;
+        color: #c1c1c1;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-deadline {
+    display: block;
+    margin-bottom: 3.2rem;
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+
+    @include respond-from('tablet') {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  &__bullits {
+    margin-top: 6rem;
+
+    @include respond-from('tablet') {
+      margin-top: 5rem;
+    }
+
+    .bullits__content {
+      @include respond-from('notebook') {
+        @include grid-col(2);
+      }
+
+      @include respond-from('tablet-min') {
+        @include grid-col(1);
+        margin: 0 0 2rem;
+      }
+    }
+  }
+}

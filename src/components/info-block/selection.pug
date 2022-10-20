@@ -1,0 +1,9 @@
+section.info-block
+  .info-block__inner
+    .info-block__content
+      h2.heading Не нашли подходящий авто, оставьте заявку на подбор
+      .info-block__button.btn(@click="modalOpen({title: 'Заявка на подбор', target: 'Заявка на обмен авто', yandex_id: 'zayavka'})") Оставить заявку
+    .info-block__pic
+      img(
+        src=require('@/img/pics/backgrounds/selection.png')
+      )

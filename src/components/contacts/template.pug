@@ -1,0 +1,16 @@
+- const config = require(`@root/config.json`);
+
+section.contacts
+  .contacts__container
+    .contacts__content
+      .contacts__plague-wrapper
+        .contacts__plague
+          .contacts__header !{config.slogan}
+          ul.contacts__addresses
+            li.contacts__addresses-item #{config.contacts.address}
+          a.contacts__phone(href=`tel:${config.contacts.phone}`) #{config.contacts.phone}
+          p время работы с 9:00 до 20:00
+          .contacts__btn
+            .btn(@click="modalOpen({title: 'Заявка на обратный звонок', target: 'Заявка на обратный звонок из карты', yandex_id: 'zayavka'})") Обратный звонок
+  .contacts__map
+    yandex-map(lat=config.contacts.map.lat,long=config.contacts.map.long,address=config.contacts.address)

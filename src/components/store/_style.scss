@@ -1,0 +1,86 @@
+$title_font: $font-secondary;
+$title_font-weight: 500;
+$title_font-style: italic;
+
+$store-list-heading_font: $font-secondary;
+$store-list-heading_font-size: 2.4rem;
+$store-list-heading_font-weight: normal;
+$store-list-heading_font-style: italic;
+
+.store {
+  margin: 0 0 9rem;
+
+  @include respond-from("tablet-min") {
+    margin: 0 0 3rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .request-form {
+      margin: 4.3rem 0 0 2rem;
+
+      @include respond-from("desktop") {
+        &__content {
+          width: 33rem;
+        }
+      }
+
+      @include respond-from("notebook") {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+    font-weight: $title_font-weight;
+    font-size: 4rem;
+    font-family: $title_font;
+    font-style: $title_font-style;
+
+    @include respond-from("tablet-min") {
+      font-size: 2.5rem;
+    }
+
+    svg {
+      position: relative;
+      top: 0.4rem;
+      width: 2.25rem;
+      height: 3.6rem;
+      margin-left: 0.5rem;
+      fill: $color-accent;
+
+      @include respond-from("tablet-min") {
+        height: 2.8rem;
+      }
+    }
+  }
+
+  &-list {
+    width: 100%;
+
+    &-configs {
+      &-heading {
+        margin: 0 0 4rem;
+        padding: 0 0 1.3rem;
+        font-weight: $store-list-heading_font-weight;
+        font-size: $store-list-heading_font-size;
+        font-family: $store-list-heading_font;
+        border-bottom: 0.1rem solid black;
+
+        @include respond-from("tablet-min") {
+          margin: 0 0 2rem;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  &__deals-offer {
+    .car-card {
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.privacy-policy {
+  min-height: calc(100vh - 10rem);
+  padding: 6rem 0;
+
+  @include respond-from('tablet') {
+    min-height: calc(100vh - 12.5rem);
+    padding: 1rem 0 5rem;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__title {
+    margin-bottom: .8em;
+
+    @include respond-from('tablet') {
+      font-size: 2.4rem;
+    }
+  }
+}

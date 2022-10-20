@@ -1,0 +1,38 @@
+-
+  const config = require(`@root/config.json`);
+  const activeModel = htmlWebpackPlugin.options.activeModel;
+
+  const priceFormat = (number) => {
+    return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+  };
+
+  let modelID = 0;
+
+section#other.tabs(v-show="currentModel")
+  .tabs-content
+    .tabs__title.tabs__title-italic
+      h2.heading.heading Другие автомобили
+      span.tabs-lead=config.brand
+    .tabs-list
+      for model in config.models
+        .tabs-item-wrapper(
+          v-show=`currentModel !== '${model.id}'`
+          data-model-id=model.id
+        )
+          .tabs-item(
+            data-card
+            style=`background-image: -webkit-image-set( url(${require('@/img/pics/tabs/mobile/' + model.id + '.png')}) 1x, url(${require('@/img/pics/tabs/mobile/' + model.id + '-large.png')}) 2x );`
+          )
+            .tabs-picture
+              picture
+                img(
+                  src=require('@/img/pics/tabs/' + model.id + '.png')
+                  srcset=`${require('@/img/pics/tabs/' + model.id + '-large.png')} 2x`
+                  alt=model.name
+                )
+            span.tabs-brand=config.brand
+            span.tabs-name=model.name
+            span.tabs-cost Выгода до
+              span  #{priceFormat(model.discount)} ₽
+            //- span.tabs-credit Переплата по кредиту #[span 0%] #[br]Первоначальный взнос #[span 0%]
+        - modelID++;

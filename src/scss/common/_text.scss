@@ -1,0 +1,81 @@
+h1,
+h2 {
+  margin: 0 0 0.5em;
+  color: $color-text;
+  font-weight: normal;
+  font-size: 3.8rem;
+  line-height: 1.1;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $color-text;
+}
+
+p {
+  margin: 0 0 0.57em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.heading {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 3.4rem;
+  font-family: $font-secondary;
+  line-height: 4.1rem;
+
+  @include respond-from("tablet-min") {
+    margin-bottom: 0.3rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  b {
+    color: $color-accent;
+  }
+
+  &_logo {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -1rem;
+      left: -4.5rem;
+      width: 6.5rem;
+      height: 3rem;
+      background: url("../img/icons/logo-symbol-g.svg") no-repeat center;
+      background-size: contain;
+      content: "";
+
+      @include respond-from("tablet-min") {
+        top: -0.6rem;
+        left: -2.5rem;
+        width: 4rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.lead {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+
+  @include respond-from("tablet-min") {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  b {
+    color: $color-accent;
+  }
+}

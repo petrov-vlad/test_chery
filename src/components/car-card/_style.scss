@@ -1,0 +1,407 @@
+$car_font: $font-secondary;
+$car_font-weight: 500;
+$car_font-style: italic;
+$car-name_font-style: italic;
+
+.car-card {
+  position: relative;
+  margin: 0 0 2.5rem;
+  padding: 0 0 2.5rem;
+  border-bottom: 0.1rem solid $color-border;
+
+  @include respond-from("tablet-min") {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &:last-child {
+    margin: 0 0 4rem;
+  }
+
+  &__header {
+    @include respond-to("tablet-min") {
+      display: flex;
+    }
+  }
+
+  &__labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond-from("tablet-min") {
+      margin: 0 0 3rem;
+    }
+
+    &_item {
+      padding: 0.4rem 1.2rem;
+      color: #fff;
+      font-size: 1.4rem;
+      font-family: $font-secondary;
+      white-space: nowrap;
+      background: $color-accent;
+
+      & + & {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-from("tablet-large") {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  &__slider {
+    @include respond-from("tablet-min") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    max-width: 24.8rem;
+    padding-top: 2.4rem;
+
+    @include respond-from("desktop") {
+      max-width: 22rem;
+    }
+
+    @include respond-from("tablet-large") {
+      flex: 0 0 33%;
+      width: 33%;
+    }
+
+    @include respond-from("tablet-min") {
+      flex: initial;
+      order: 1;
+      width: initial;
+    }
+
+    picture {
+      display: block;
+
+      > * {
+        max-width: 95%;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    font-family: $car_font;
+  }
+
+  &__palette {
+    display: flex;
+    justify-content: center;
+    max-width: 24.8rem;
+    margin-top: 1.9rem;
+
+    @include respond-from("desktop") {
+      max-width: 22rem;
+    }
+
+    @include respond-from("tablet-large") {
+      flex: 0 0 33%;
+      width: 33%;
+    }
+
+    @include respond-from("tablet-min") {
+      display: block;
+      flex: initial;
+      order: 2;
+      width: initial;
+    }
+
+    &.mobile {
+      width: 100%;
+      margin: 1.9rem 0;
+
+      @include respond-to("tablet-large") {
+        display: none;
+      }
+
+      @include respond-from("tablet-min") {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    &.tablet {
+      @include respond-from("tablet-large") {
+        display: none;
+      }
+    }
+  }
+
+  &__color {
+    position: relative;
+    width: 2.1rem;
+    height: 2.1rem;
+    margin: 0 .8rem 0 0;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include respond-from("tablet-min") {
+      margin: 0 0 0.7rem;
+    }
+
+    &:hover, &.is-active {
+      &:before {
+        border-color: #000;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: -0.3rem;
+      right: -0.3rem;
+      bottom: -0.3rem;
+      left: -0.3rem;
+      border: 0.1rem solid #ccc;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &-label {
+      margin-right: 1.5rem;
+      color: #787878;
+    }
+  }
+
+  &__main {
+    @include respond-from("tablet-large") {
+      flex: 0 0 33%;
+      width: 33%;
+    }
+
+    @include respond-from("tablet-min") {
+      flex: initial;
+      order: 3;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+
+  &__params {
+    margin-bottom: 2rem;
+
+    span {
+      display: block;
+
+      b {
+        color: $color-accent;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__price {
+    & + & {
+      margin-top: 2rem;
+    }
+  }
+
+  &__prices {
+    @include respond-from("tablet-min") {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+
+      &-price {
+        word-break: break-all;
+
+        & + & {
+          // width: 40%;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__label {
+    opacity: 0.6;
+
+    @include respond-from("tablet-min") {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__value {
+    position: relative;
+    color: $color-accent;
+    font-weight: 500;
+    font-size: 2.4rem;
+    font-family: $car_font;
+    font-style: italic;
+    white-space: nowrap;
+
+    @include respond-from("tablet-min") {
+      font-size: 2.2rem;
+    }
+
+    &--small {
+      font-size: 2rem;
+    }
+  }
+
+  &__crossed {
+    position: relative;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-family: $car_font;
+    font-style: italic;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: -0.2rem;
+      width: 105%;
+      height: 0.15rem;
+      background-color: $color-black;
+      content: "";
+    }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1rem;
+
+    @include respond-to("tablet-large") {
+      min-width: 24rem;
+    }
+
+    @include respond-from("tablet-large") {
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    @include respond-from("tablet-min") {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+
+    @include respond-from("tablet-large") {
+      & + & {
+        margin-top: 3.7rem;
+      }
+    }
+
+    @include respond-from("tablet-min") {
+      & + & {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__bonuses {
+    @include respond-from("tablet-large") {
+      flex: 0 0 20%;
+      width: 20%;
+
+      &-list {
+        display: none;
+      }
+    }
+
+    @include respond-from("tablet-min") {
+      flex: initial;
+      order: 4;
+      width: 100%;
+      margin: 0 0 2.5rem;
+    }
+
+    &-list {
+      margin: 0 0 0 1.6rem;
+      padding: 0;
+      list-style: none;
+
+      li {
+        &:before {
+          position: relative;
+          top: 0.1rem;
+          left: -1rem;
+          color: $color-accent;
+          font-weight: 900;
+          font-size: 2rem;
+          font-family: initial;
+          content: "•";
+        }
+
+        span {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    margin: 0 1.5rem 0 0;
+
+    svg {
+      width: 2.6rem;
+      max-height: 2.6rem;
+    }
+  }
+
+  &__control {
+    @include respond-from("tablet-large") {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    @include respond-from("tablet-min") {
+      flex-wrap: wrap;
+      order: 5;
+    }
+  }
+
+  &__button {
+    margin: 0 0 1rem auto;
+    font-family: $car_font;
+
+    @include respond-from("tablet-large") {
+      width: 100%;
+
+      & + & {
+        margin-left: 2rem;
+      }
+    }
+
+    @include respond-from("tablet-min") {
+      & + & {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      font-size: 1.8rem;
+    }
+  }
+}

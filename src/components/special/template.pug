@@ -1,0 +1,32 @@
+- const config = require(`@root/config.json`);
+
+section.special
+  .container
+    .special__title
+      h2.heading Специальные предложения
+    .special__content
+      .special__row
+        .special__col.special__col_long
+          .special__card(@click="modalOpen({title: 'Заявка на спецпредложение', target: 'Заявка на выгоду по Trade-in', yandex_id: 'zayavka'})")
+            .special__img
+              img(src=require('@/img/pics/special/1.jpg'))
+            .special__button
+              span Заказать звонок
+        .special__col
+          .special__card(@click="modalOpen({title: 'Заявка на спецпредложение', target: 'Заявка на сервис (проверка равзал-схождения в подарок)', yandex_id: 'service'})")
+            .special__img
+              img(src=require('@/img/pics/special/2.jpg'))
+            .special__button
+              span Записаться на сервис
+        .special__col
+          .special__card(@click="modalOpen({title: 'Заявка на спецпредложение', target: 'Заявка на сервис (totachi в подарок)', yandex_id: 'service'})")
+            .special__img
+              img(src=require('@/img/pics/special/4.jpg'))
+            .special__button
+              span Записаться на сервис
+        .special__col.special__col_long
+          .special__card(@click="modalOpen({title: 'Заявка на спецпредложение', target: 'Заявка на сервис (5 000 бонусов в подарок)', yandex_id: 'service'})")
+            .special__img
+              img(src=require('@/img/pics/special/3.jpg'))
+            .special__button
+              span Записаться на сервис

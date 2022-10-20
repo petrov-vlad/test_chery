@@ -1,0 +1,50 @@
+// Helvetica Neue
+
+@font-face {
+  font-weight: normal;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  src: url("../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.eot");
+  src: local("HelveticaNeueCyr-Roman"),
+    url("../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.woff") format("woff"),
+    url("../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf") format("truetype");
+}
+
+// Tactic Round
+
+@font-face {
+  font-weight: normal;
+  font-family: "Tactic Round";
+  font-style: normal;
+  src: url("../fonts/TacticRound/TacticRound-Reg.eot");
+  src: local("Tactic Round Reg"), local("TacticRound-Reg"),
+    url("../fonts/TacticRound/TacticRound-Reg.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TacticRound/TacticRound-Reg.woff2") format("woff2"),
+    url("../fonts/TacticRound/TacticRound-Reg.woff") format("woff"),
+    url("../fonts/TacticRound/TacticRound-Reg.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Tactic Round";
+  font-style: normal;
+  src: url("../fonts/TacticRound/TacticRound-Med.eot");
+  src: local("Tactic Round Med"), local("TacticRound-Med"),
+    url("../fonts/TacticRound/TacticRound-Med.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TacticRound/TacticRound-Med.woff2") format("woff2"),
+    url("../fonts/TacticRound/TacticRound-Med.woff") format("woff"),
+    url("../fonts/TacticRound/TacticRound-Med.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Tactic Round";
+  font-style: italic;
+  src: url("../fonts/TacticRound/TacticRound-MedIt.eot");
+  src: local("Tactic Round Med It"), local("TacticRound-MedIt"),
+    url("../fonts/TacticRound/TacticRound-MedIt.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TacticRound/TacticRound-MedIt.woff2") format("woff2"),
+    url("../fonts/TacticRound/TacticRound-MedIt.woff") format("woff"),
+    url("../fonts/TacticRound/TacticRound-MedIt.ttf") format("truetype");
+}

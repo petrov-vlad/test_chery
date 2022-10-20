@@ -1,0 +1,103 @@
+@mixin respond-to($media) {
+  @if $media == iphone5 {
+    @media only screen and (min-width: $iphone5) {
+      @content;
+    }
+  }
+  @if $media == tablet-min {
+    @media only screen and (min-width: $tablet-min) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $media == tablet-large {
+    @media only screen and (min-width: $tablet-large) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: $desktop) {
+      @content;
+    }
+  } @else if $media == notebook {
+    @media only screen and (min-width: $notebook) {
+      @content;
+    }
+  } @else if $media == desktop-large {
+    @media only screen and (min-width: $desktop-large) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-from($media) {
+  @if $media == iphone5 {
+    @media only screen and (max-width: $iphone5 - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == tablet-min {
+    @media only screen and (max-width: $tablet-min - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: $tablet - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == tablet-large {
+    @media only screen and (max-width: $tablet-large - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == notebook {
+    @media only screen and (max-width: $notebook - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (max-width: $desktop - (1em / 18)) {
+      @content;
+    }
+  } @else if $media == desktop-large {
+    @media only screen and (max-width: $desktop-large - (1em / 18)) {
+      @content;
+    }
+  }
+}
+
+@mixin grid($cols, $row-gap: 0, $column-gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  row-gap: $row-gap + rem;
+  column-gap: $column-gap + rem;
+}
+
+@mixin grid-col($cols) {
+  grid-template-columns: repeat($cols, 1fr);
+}
+
+@mixin row($margin: 1) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$margin + rem;
+  margin-left: -$margin + rem;
+}
+
+@mixin col($width, $cols, $padding: 1) {
+  flex-basis: $width * 100% / $cols;
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-width: $width * 100% / $cols;
+  padding-right: $padding + rem;
+  padding-left: $padding + rem;
+}
+
+@mixin container($padding: 2) {
+  max-width: $tablet;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $padding + rem;
+  padding-left: $padding + rem;
+
+  @include respond-to('tablet-large') {
+    max-width: $desktop;
+  }
+}

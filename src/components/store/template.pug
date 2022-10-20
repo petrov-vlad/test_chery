@@ -1,0 +1,26 @@
+include ../car-card/mixin
+
+-
+  const config = require(`@root/config.json`);
+
+  const priceFormat = (number) => {
+    return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : '';
+  };
+
+section#store.store
+  .container
+    for model, index in config.models
+      .store-content(
+        data-card
+        data-model-id=model.id
+        class=`${index === 0 ? '' : 'hidden'}`
+      )
+        .store__title #{config.brand} #{model.name} <br>В наличии
+        .store__wrapper
+          .store-list
+            for configuration in model.store
+              //- h3.store-list-configs-heading=configuration.name
+              .store-list-cards
+                for item in configuration.stock.sort((a, b) => a.price - b.price)
+                  +car-card(model.id, model.colors, item.name, item.cost, item.price, item.discount, item.transmission, item.fuel, item.color)
+          request-form(model=activeModel :modal="false")

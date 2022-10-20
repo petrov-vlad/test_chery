@@ -1,0 +1,39 @@
+.footer {
+  padding: 4rem 0;
+  color: white;
+  background-color: black;
+
+  @include respond-from("tablet") {
+    padding: 2rem 0 3rem;
+  }
+
+  &__header {
+    margin: 0 0 2.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+
+    @include respond-from("tablet") {
+      margin: 0 0 2rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__content {
+    font-size: 1.4rem;
+    font-family: $font-secondary;
+    opacity: 0.6;
+
+    @include respond-from("tablet") {
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 0 0 1.3em;
+      line-height: 1.45;
+
+      @include respond-from("tablet") {
+        line-height: 1.6;
+      }
+    }
+  }
+}

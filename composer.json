@@ -1,0 +1,16 @@
+{
+    "name": "tapir/cher42.ru",
+    "autoload": {
+        "psr-4": {
+            "Tapir\\Cher42Ru\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tapir"
+        }
+    ],
+    "require": {
+        "symfony/mailer": "^5.4"
+    }
+}

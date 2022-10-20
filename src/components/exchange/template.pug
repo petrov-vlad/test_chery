@@ -1,0 +1,30 @@
+section.exchange
+  .container
+    .exchange__title
+      h2.heading Купи свой #[span Chery Tiggo] #[br]в Мае по самым #[br]выгодным условиям:
+      .exchange__lead Автосалон «Ай-Бэ-Эм» Юг является #[span официальным дилером Chery ** в Москве], у нас можно купить новый кроссовер Chery Tiggo с максимальной скидкой со следующими преимуществами:
+    .exchange__info
+      .exchange__content
+        .exchange__text
+          ul(style="line-height: 1.5;")
+            li(style="font-size: 18px")
+              span Выгодные условия кредита, лизинга, рассрочки
+            li(style="font-size: 18px")
+              span Возможность провести тест-драйв авто
+            li(style="font-size: 18px")
+              span Высокий уровень сервисного обслуживания
+            li(style="font-size: 18px")
+              span Помощь в автостраховании
+            li(style="font-size: 18px")
+              span Персональный подход к каждому клиенту
+            li(style="font-size: 18px")
+              span Переплата по кредиту 0%
+            li(style="font-size: 18px")
+              span Первоначальный взнос 0%
+        .exchange__button
+          .btn(@click="modalOpen({title: 'Заявка на обмен', target: 'Заявка на обмен авто', yandex_id: 'zayavka'})") Купить CHERY
+      .exchange__pic
+        img(
+          src=require('@/img/pics/backgrounds/exchange.png')
+        )
+      .exchange__lead.mobile Автосалон «Ай-Бэ-Эм» Юг является #[span официальным дилером Chery ** в Москве], у нас можно купить новый кроссовер Chery Tiggo с максимальной скидкой со следующими преимуществами:

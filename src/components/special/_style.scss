@@ -1,0 +1,84 @@
+$title_font: $font-secondary;
+$title_font-weight: 500;
+$title_font-style: italic;
+$title_line_height: 5.2rem;
+
+$card_font: $font-secondary;
+$card_font-weight: 500;
+$card_font-size: 3.4rem;
+
+.special {
+  margin: 0 0 11rem;
+
+  @include respond-from('tablet-min') {
+    margin: 0 0 6rem;
+  }
+
+  &__title {
+    margin: 0 0 3rem;
+    font-weight: $title_font-weight;
+    font-size: 4rem;
+    font-family: $title_font;
+    font-style: $title_font-style;
+
+    @include respond-to('desktop') {
+      margin: 0 0 5rem;
+    }
+
+    @include respond-from('tablet-min') {
+      font-size: 2.5rem;
+    }
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  &__row {
+    @include row();
+  }
+
+  &__col {
+    @include respond-to('tablet-min') {
+      @include col(36.12, 100);
+  
+      &_long {
+        @include col(63.88, 100);
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    margin: 0 0 1.9rem;
+  }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    padding: 1.4rem 3rem;
+    border: 0.2rem solid white;
+    cursor: pointer;
+    transition: opacity .2s ease;
+
+    @include respond-from('notebook') {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    span {
+      color: white;
+      font-size: 1.8rem;
+    }
+  }
+}
